@@ -7,7 +7,7 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      {data?.characters?.map((item: any) => {
+      {data?.map((item: any) => {
         return <div key={item.id}>{item.name}</div>;
       })}
     </main>

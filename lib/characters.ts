@@ -1,9 +1,14 @@
 export async function getAllCharacters() {
-  const data = await fetch(`${process.env.API_ENDPOINT}/characters`);
+  console.log("API_ENDPOINT");
+  console.log(process.env.API_ENDPOINT);
 
-  if (!data.ok) {
-    throw new Error("Failed to fetch data");
-  }
+  // const data = await fetch(`${process.env.API_ENDPOINT}/characters`);
 
-  return data.json();
+  // if (!data.ok) {
+  //   throw new Error("Failed to fetch data");
+  // }
+
+  // return data.json();
+
+  return [];
 }
