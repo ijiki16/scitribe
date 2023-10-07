@@ -1,19 +1,14 @@
 "use client";
 
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Hero } from "@/components/Hero";
 import { getAllCharacters } from "../../lib/characters";
 import { VtmnButton } from "@vtmn/react";
 
-export default async function Home() {
-  const data = await getAllCharacters();
-
+export default function Home() {
   return (
-    <main className={styles.main}>
-      {data?.map((item: any) => {
-        return <div key={item.id}>{item.name}</div>;
-      })}
-      <VtmnButton onClick={() => getAllCharacters()}>Refresh data</VtmnButton>
+    <main>
+      {/* <VtmnButton onClick={() => getAllCharacters()}>Refresh data</VtmnButton> */}
+      <Hero />
     </main>
   );
 }
