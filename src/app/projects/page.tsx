@@ -11,7 +11,6 @@ import {
 import { FieldOfScience } from "../../../lib/types";
 import { useEffect, useState } from "react";
 import categories from "../../../data/categories.json";
-import Image from "next/image";
 import ProjectModal from "@/components/ProjectModal";
 
 export default function Projects() {
@@ -176,7 +175,15 @@ export default function Projects() {
               ))}
             </div>
           </div>
-          {openModal && <ProjectModal open={openModal} project={curProject} />}
+          {openModal && (
+            <ProjectModal
+              open={openModal}
+              project={curProject}
+              onClose={() => {
+                setOpenModal(false);
+              }}
+            />
+          )}
         </div>
       </div>
     </main>
