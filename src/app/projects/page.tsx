@@ -41,7 +41,7 @@ const projectData = [
 
 export default function Projects() {
   const [dropDown, setDropDown] = useState(false);
-  const [fieldOfSince, setFieldOfSince] = useState([]);
+  const [fieldOfSince, setFieldOfSince] = useState<Array<string>>([]);
   const [projectList, setProjectList] = useState(projectData);
 
   return (
@@ -75,7 +75,12 @@ export default function Projects() {
                     <VtmnCheckbox
                       identifier="my-checkbox"
                       labelText={data}
-                      onChange={function noRefCheck() {}}
+                      checked={fieldOfSince.includes(data)}
+                      onChange={(e) => {
+                        setFieldOfSince([...fieldOfSince, data]);
+                        console.log(e.target.checked);
+                        console.log(fieldOfSince);
+                      }}
                     />
                   </VtmnListItem>
                 ))}
