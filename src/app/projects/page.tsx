@@ -97,7 +97,10 @@ export default function Projects() {
           </div>
           <div style={{ display: "flex", gap: "35px" }}>
             {projectList.map((project, index) => (
-              <div style={{ flex: "1 1 0px" }} key={index}>
+              <div
+                style={{ width: 300, height: 450, flex: "1 1 0px" }}
+                key={index}
+              >
                 <VtmnCard
                   title={project.title}
                   img={
@@ -114,7 +117,7 @@ export default function Projects() {
                     />
                   }
                 >
-                  <div>{project.description}</div>
+                  <div style={{ paddingTop: 10 }}>{project.description}</div>
                 </VtmnCard>
               </div>
             ))}
