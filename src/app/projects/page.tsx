@@ -17,7 +17,7 @@ import ProjectModal from "@/components/ProjectModal";
 export default function Projects() {
   const [curProject, setCurProject] = useState(null);
   const [openModal, setOpenModal] = useState(false);
-  const [dropDown, setDropDown] = useState(false);
+  const [dropDown, setDropDown] = useState(true);
   const [fieldOfScience, setFieldOfScience] = useState<Array<string>>([]);
   const data = categories as any;
 
@@ -30,7 +30,6 @@ export default function Projects() {
 
     if (fieldOfScience.length > 0) {
       fieldOfScience.forEach((item) => {
-        console.log("item", item);
         const list = data[item];
 
         projects.push(list);
@@ -124,8 +123,8 @@ export default function Projects() {
                   <VtmnCard
                     title=""
                     img={
-                      <Image
-                        src="/projects1.png"
+                      <img
+                        src={project.image || "/project1.png"}
                         alt="projects1"
                         width={100}
                         height={100}
@@ -164,16 +163,15 @@ export default function Projects() {
                     >
                       {project.summery}
                     </span>
-                    {/* <div style={{ paddingTop: 10 }}>{project.description}</div> */}
+                    <VtmnButton
+                      onClick={() => {
+                        setOpenModal(true);
+                        setCurProject(project);
+                      }}
+                    >
+                      Learn more
+                    </VtmnButton>
                   </VtmnCard>
-                  <VtmnButton
-                    onClick={() => {
-                      setOpenModal(true);
-                      setCurProject(project);
-                    }}
-                  >
-                    Learn more
-                  </VtmnButton>
                 </div>
               ))}
             </div>
