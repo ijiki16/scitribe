@@ -11,8 +11,11 @@ import {
 import { FieldOfScience } from "../../../lib/types";
 import { useEffect, useState } from "react";
 import categories from "../../../data/categories.json";
+import ProjectModal from "@/components/ProjectModal";
 
 export default function Projects() {
+  const [curProject, setCurProject] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const [fieldOfScience, setFieldOfScience] = useState<Array<string>>([]);
   const data = categories as any;
@@ -104,6 +107,7 @@ export default function Projects() {
           >
             <div style={{ fontWeight: "bold", fontSize: "24px" }}>Pojects</div>
           </div>
+
           <div style={{ width: "1000px" }}>
             <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
               {projectList.map((project: any, index: number) => (
@@ -129,11 +133,19 @@ export default function Projects() {
                   >
                     {/* <div style={{ paddingTop: 10 }}>{project.description}</div> */}
                   </VtmnCard>
-                  <VtmnButton>Learn more</VtmnButton>
+                  <VtmnButton
+                    onClick={() => {
+                      setOpenModal(true);
+                      setCurProject(project);
+                    }}
+                  >
+                    Learn more
+                  </VtmnButton>
                 </div>
               ))}
             </div>
           </div>
+          {openModal && <ProjectModal open={openModal} project={curProject} />}
         </div>
       </div>
     </main>
