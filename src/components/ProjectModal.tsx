@@ -21,6 +21,7 @@ export default function ProjectModal(props: ProjectModalProps) {
     <div>
       <VtmnModal open={open} onClose={onClose}>
         <VtmnModalTitle>Apply on Project Title</VtmnModalTitle>
+        <div>{project.summery[0]}</div>
         <div style={{ paddingTop: 20, paddingBottom: 20 }}>
           <VtmnTextInput
             icon="home-fill"
