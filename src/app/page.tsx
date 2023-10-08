@@ -5,6 +5,7 @@ import { getAllCharacters } from "../../lib/characters";
 import { VtmnButton } from "@vtmn/react";
 import { Info } from "@/components/InfoSection";
 import { ProjectMain } from "@/components/ProjectMain";
+import { ProfilesMain } from "@/components/ProfilesMain";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Info />
       <ProjectMain />
+      <ProfilesMain />
     </main>
   );
 }
