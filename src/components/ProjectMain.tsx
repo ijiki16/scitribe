@@ -16,7 +16,7 @@ export const ProjectMain = () => {
         <div style={{ fontWeight: "bold", fontSize: "24px" }}>Pojects</div>
         <Link href="/">View all</Link>
       </div>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", gap: "35px" }}>
         <div style={{ flex: "1 1 0px" }}>
           {" "}
           <VtmnCard
@@ -48,7 +48,6 @@ export const ProjectMain = () => {
             </div>
           </VtmnCard>
         </div>
-        <div style={{ width: "35px", flex: "1 1 0px" }}></div>
         <div style={{ flex: "1 1 0px" }}>
           {" "}
           <VtmnCard
@@ -80,7 +79,6 @@ export const ProjectMain = () => {
             </div>
           </VtmnCard>
         </div>
-        <div style={{ width: "35px", flex: "1 1 0px" }}></div>
 
         <div style={{ flex: "1 1 0px" }}>
           {" "}
@@ -113,7 +111,6 @@ export const ProjectMain = () => {
             </div>
           </VtmnCard>
         </div>
-        <div style={{ width: "35px", flex: "1 1 0px" }}></div>
 
         <div style={{ flex: "1 1 0px" }}>
           {" "}
