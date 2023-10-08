@@ -14,7 +14,6 @@ interface ProjectModalProps {
 
 export default function ProjectModal(props: ProjectModalProps) {
   const { open, project, onClose } = props;
-  const [description, setDescription] = useState("");
   console.log(project);
 
   return (
@@ -31,25 +30,27 @@ export default function ProjectModal(props: ProjectModalProps) {
           <VtmnTextInput
             icon="home-fill"
             identifier="vtmn-input"
-            labelText="Enter your description"
-            onChange={(event) => {
-              setDescription(event.target.value);
-            }}
-            value={description}
-            placeholder="description"
-          />
-
-          <VtmnTextInput
-            icon="home-fill"
-            identifier="vtmn-input"
             labelText="Full name"
             onIconClick={function noRefCheck() {}}
             placeholder="full name"
           />
+          <VtmnTextInput
+            icon="home-fill"
+            identifier="vtmn-input"
+            labelText="Enter your email"
+            onChange={function noRefCheck() {}}
+            placeholder="email"
+          />
+          <VtmnTextInput
+            icon="home-fill"
+            identifier="vtmn-input"
+            labelText="Enter description"
+            onChange={function noRefCheck() {}}
+            placeholder="description"
+          />
         </div>
         <VtmnButton
           onClick={() => {
-            setDescription("");
             onClose();
           }}
         >
