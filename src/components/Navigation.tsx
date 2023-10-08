@@ -1,7 +1,11 @@
 import Link from "next/link";
 
 const Logo = () => {
-  return <div style={{ fontSize: "20px", fontWeight: 400 }}>Logo</div>;
+  return (
+    <Link href="/" style={{ fontSize: "20px", fontWeight: 400 }}>
+      Logo
+    </Link>
+  );
 };
 
 const MiddleArea = () => {
