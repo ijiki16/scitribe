@@ -3,14 +3,18 @@ import Link from "next/link";
 const Logo = () => {
   return (
     <Link href="/" style={{ fontSize: "20px", fontWeight: 400 }}>
-      Logo
+      <img
+        src="/sci-tribe.png"
+        alt="logo"
+        style={{ height: "75px", marginBottom: "16px" }}
+      />
     </Link>
   );
 };
 
 const MiddleArea = () => {
   return (
-    <div style={{ display: "flex", padding: "0 150px" }}>
+    <div style={{ display: "flex", padding: "0 40px" }}>
       <Link
         href="/about"
         style={{ padding: "0 30px", fontSize: "20px", fontWeight: 400 }}

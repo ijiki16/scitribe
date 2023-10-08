@@ -11,6 +11,7 @@ import {
 import { FieldOfScience } from "../../../lib/types";
 import { useEffect, useState } from "react";
 import categories from "../../../data/categories.json";
+import Image from "next/image";
 
 export default function Projects() {
   const [dropDown, setDropDown] = useState(false);
@@ -33,6 +34,8 @@ export default function Projects() {
       });
 
       setProjectList(projects.flat());
+    } else {
+      setProjectList(data["animals"]);
     }
   }, [fieldOfScience, data]);
 
@@ -104,29 +107,60 @@ export default function Projects() {
           >
             <div style={{ fontWeight: "bold", fontSize: "24px" }}>Pojects</div>
           </div>
-          <div style={{ width: "1000px" }}>
+          <div style={{ width: "100%" }}>
             <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
               {projectList.map((project: any, index: number) => (
                 <div
-                  style={{ width: 300, height: 450, flex: "1 1 0px" }}
+                  style={{
+                    flexGrow: 1,
+                    width: "25%",
+                    marginBottom: "20px",
+                  }}
                   key={index}
                 >
                   <VtmnCard
-                    title={project.position}
-                    // img={
-                    //   <Image
-                    //     src={project.image}
-                    //     alt={"projects " + index + " image"}
-                    //     width={268}
-                    //     height={218}
-                    //     style={{
-                    //       width: "100%",
-                    //       height: "auto",
-                    //       objectFit: "cover",
-                    //     }}
-                    //   />
-                    // }
+                    title=""
+                    img={
+                      <Image
+                        src="/projects1.png"
+                        alt="projects1"
+                        width={100}
+                        height={100}
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          objectFit: "cover",
+                        }}
+                      />
+                    }
                   >
+                    <span
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: "20px",
+                        marginBottom: "10px",
+                        width: "320px",
+                        display: "block",
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        msTextOverflow: "ellipsis",
+                      }}
+                    >
+                      {project.position}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: "20px",
+                        marginBottom: "10px",
+                        width: "320px",
+                        display: "block",
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        msTextOverflow: "ellipsis",
+                      }}
+                    >
+                      {project.summery}
+                    </span>
                     {/* <div style={{ paddingTop: 10 }}>{project.description}</div> */}
                   </VtmnCard>
                   <VtmnButton>Learn more</VtmnButton>
