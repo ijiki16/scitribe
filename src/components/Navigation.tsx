@@ -1,4 +1,4 @@
-import { VtmnButton, VtmnNavbar, VtmnNavbarLink } from "@vtmn/react";
+import Link from "next/link";
 
 const Logo = () => {
   return <div style={{ fontSize: "20px", fontWeight: 400 }}>Logo</div>;
@@ -7,15 +7,24 @@ const Logo = () => {
 const MiddleArea = () => {
   return (
     <div style={{ display: "flex", padding: "0 150px" }}>
-      <div style={{ padding: "0 30px", fontSize: "20px", fontWeight: 400 }}>
+      <Link
+        href="/about"
+        style={{ padding: "0 30px", fontSize: "20px", fontWeight: 400 }}
+      >
         About
-      </div>
-      <div style={{ padding: "0 30px", fontSize: "20px", fontWeight: 400 }}>
+      </Link>
+      <Link
+        href="/about"
+        style={{ padding: "0 30px", fontSize: "20px", fontWeight: 400 }}
+      >
         Projects
-      </div>
-      <div style={{ padding: "0 30px", fontSize: "20px", fontWeight: 400 }}>
+      </Link>
+      <Link
+        href="/about"
+        style={{ padding: "0 30px", fontSize: "20px", fontWeight: 400 }}
+      >
         People
-      </div>
+      </Link>
     </div>
   );
 };
