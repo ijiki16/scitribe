@@ -77,7 +77,7 @@ export const ProfilesMain = () => {
             </div>
           </VtmnCard>
         </div>
-        <div style={{ width: "35px" }}></div>
+        <div style={{ width: "35px", flex: "1 1 0px" }}></div>
         <div style={{ flex: "1 1 0px" }}>
           {" "}
           <VtmnCard
@@ -138,7 +138,7 @@ export const ProfilesMain = () => {
             </div>
           </VtmnCard>
         </div>
-        <div style={{ width: "35px" }}></div>
+        <div style={{ width: "35px", flex: "1 1 0px" }}></div>
 
         <div style={{ flex: "1 1 0px" }}>
           {" "}
@@ -200,7 +200,7 @@ export const ProfilesMain = () => {
             </div>
           </VtmnCard>
         </div>
-        <div style={{ width: "35px" }}></div>
+        <div style={{ width: "35px", flex: "1 1 0px" }}></div>
 
         <div style={{ flex: "1 1 0px" }}>
           {" "}
