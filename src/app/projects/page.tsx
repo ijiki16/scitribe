@@ -8,41 +8,33 @@ import {
   VtmnIcon,
   VtmnCard,
 } from "@vtmn/react";
-import { FieldOfSince } from "../../../lib/types";
-import { useState } from "react";
-import Image from "next/image";
-
-const projectData = [
-  {
-    title: "Project Name",
-    image: "/projects1.png",
-    description:
-      "A container for content representing a single entity. e.g. a contact, article, or task.",
-  },
-  {
-    title: "Make a Moonquake Map 2.0!",
-    image: "/projects2.png",
-    description:
-      "A container for content representing a single entity. e.g. a contact, article, or task.",
-  },
-  {
-    title: "Project Name",
-    image: "/projects3.png",
-    description:
-      "A container for content representing a single entity. e.g. a contact, article, or task.",
-  },
-  {
-    title: "Mapping Data for Societal Benefit",
-    image: "/projects4.png",
-    description:
-      "A container for content representing a single entity. e.g. a contact, article, or task.",
-  },
-];
+import { FieldOfScience } from "../../../lib/types";
+import { useEffect, useState } from "react";
+import categories from "../../../data/categories.json";
 
 export default function Projects() {
   const [dropDown, setDropDown] = useState(false);
-  const [fieldOfSince, setFieldOfSince] = useState<Array<string>>([]);
-  const [projectList, setProjectList] = useState(projectData);
+  const [fieldOfScience, setFieldOfScience] = useState<Array<string>>([]);
+  const data = categories as any;
+
+  const [projectList, setProjectList] = useState(data["animals"]);
+
+  console.log(data[fieldOfScience[0]]);
+
+  useEffect(() => {
+    const projects: any[] = [];
+
+    if (fieldOfScience.length > 0) {
+      fieldOfScience.forEach((item) => {
+        console.log("item", item);
+        const list = data[item];
+
+        projects.push(list);
+      });
+
+      setProjectList(projects.flat());
+    }
+  }, [fieldOfScience, data]);
 
   return (
     <main>
@@ -64,22 +56,34 @@ export default function Projects() {
               onClick={() => setDropDown(!dropDown)}
               iconRight="arrow-down-line"
             >
-              Filed of Since:
+              Filed of Science:
               <VtmnIcon size={24} value="arrow-down-line" variant="default" />
             </VtmnButton>
 
             {dropDown && (
               <VtmnList>
-                {Object.keys(FieldOfSince).map((data, index) => (
+                {Object.values(FieldOfScience).map((data, index) => (
                   <VtmnListItem id={data} key={index}>
                     <VtmnCheckbox
-                      identifier="my-checkbox"
+                      identifier={index.toString()}
                       labelText={data}
-                      checked={fieldOfSince.includes(data)}
+                      checked={fieldOfScience.includes(
+                        data.toLocaleLowerCase()
+                      )}
+                      value={data}
                       onChange={(e) => {
-                        setFieldOfSince([...fieldOfSince, data]);
-                        console.log(e.target.checked);
-                        console.log(fieldOfSince);
+                        if (e.target.checked) {
+                          setFieldOfScience([
+                            ...fieldOfScience,
+                            data.toLowerCase(),
+                          ]);
+                        } else {
+                          setFieldOfScience(
+                            fieldOfScience.filter(
+                              (field) => field != data.toLowerCase()
+                            )
+                          );
+                        }
                       }}
                     />
                   </VtmnListItem>
@@ -100,32 +104,35 @@ export default function Projects() {
           >
             <div style={{ fontWeight: "bold", fontSize: "24px" }}>Pojects</div>
           </div>
-          <div style={{ display: "flex", gap: "35px" }}>
-            {projectList.map((project, index) => (
-              <div
-                style={{ width: 300, height: 450, flex: "1 1 0px" }}
-                key={index}
-              >
-                <VtmnCard
-                  title={project.title}
-                  img={
-                    <Image
-                      src={project.image}
-                      alt={"projects " + index + " image"}
-                      width={268}
-                      height={218}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        objectFit: "cover",
-                      }}
-                    />
-                  }
+          <div style={{ width: "1000px" }}>
+            <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+              {projectList.map((project: any, index: number) => (
+                <div
+                  style={{ width: 300, height: 450, flex: "1 1 0px" }}
+                  key={index}
                 >
-                  <div style={{ paddingTop: 10 }}>{project.description}</div>
-                </VtmnCard>
-              </div>
-            ))}
+                  <VtmnCard
+                    title={project.position}
+                    // img={
+                    //   <Image
+                    //     src={project.image}
+                    //     alt={"projects " + index + " image"}
+                    //     width={268}
+                    //     height={218}
+                    //     style={{
+                    //       width: "100%",
+                    //       height: "auto",
+                    //       objectFit: "cover",
+                    //     }}
+                    //   />
+                    // }
+                  >
+                    {/* <div style={{ paddingTop: 10 }}>{project.description}</div> */}
+                  </VtmnCard>
+                  <VtmnButton>Learn more</VtmnButton>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

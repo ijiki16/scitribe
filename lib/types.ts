@@ -2,10 +2,10 @@ export interface Project {
   url: string;
   title: string;
   text: string;
-  fieldOfSince: FieldOfSince;
+  fieldOfSince: FieldOfScience;
 }
 
-export enum FieldOfSince {
+export enum FieldOfScience {
   Animals = "Animals",
   ArchaeologyCultural = "Archaeology & cultural",
   AstronomySpace = "Astronomy & space",
