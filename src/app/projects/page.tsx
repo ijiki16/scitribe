@@ -12,7 +12,7 @@ import { useState } from "react";
 
 export default function Projects() {
   const [dropDown, setDropDown] = useState(false);
-  const [fieldOfSince, setFieldOfSince] = useState([false]);
+  const [fieldOfSince, setFieldOfSince] = useState([]);
 
   return (
     <main>

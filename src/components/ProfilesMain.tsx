@@ -18,7 +18,6 @@ export const ProfilesMain = () => {
       </div>
       <div style={{ display: "flex", gap: "35px" }}>
         <div style={{ flex: "1 1 0px" }}>
-          {" "}
           <VtmnCard
             title=""
             img={
@@ -34,14 +33,18 @@ export const ProfilesMain = () => {
                   padding: "16px 0",
                 }}
               >
-                <img
-                  src="/profile1.png"
-                  style={{
-                    width: "170px",
-                    height: "170px",
-                    objectFit: "cover",
-                  }}
-                />
+                <div style={{ width: 150, height: 150 }}>
+                  <Image
+                    src="/profile1.png"
+                    alt="profile1"
+                    fill={false}
+                    width={150}
+                    height={150}
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
               </div>
             }
           >
@@ -78,7 +81,6 @@ export const ProfilesMain = () => {
           </VtmnCard>
         </div>
         <div style={{ flex: "1 1 0px" }}>
-          {" "}
           <VtmnCard
             title=""
             img={
@@ -94,14 +96,18 @@ export const ProfilesMain = () => {
                   padding: "16px 0",
                 }}
               >
-                <img
-                  src="/profile2.png"
-                  style={{
-                    width: "170px",
-                    height: "170px",
-                    objectFit: "cover",
-                  }}
-                />
+                <div style={{ width: 150, height: 150 }}>
+                  <Image
+                    src="/profile2.png"
+                    alt="profile2"
+                    fill={false}
+                    width={150}
+                    height={150}
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
               </div>
             }
           >
@@ -139,7 +145,6 @@ export const ProfilesMain = () => {
         </div>
 
         <div style={{ flex: "1 1 0px" }}>
-          {" "}
           <VtmnCard
             title=""
             img={
@@ -155,14 +160,18 @@ export const ProfilesMain = () => {
                   padding: "16px 0",
                 }}
               >
-                <img
-                  src="/profile3.png"
-                  style={{
-                    width: "170px",
-                    height: "170px",
-                    objectFit: "cover",
-                  }}
-                />
+                <div style={{ width: 150, height: 150 }}>
+                  <Image
+                    src="/profile3.png"
+                    alt="profile3"
+                    fill={false}
+                    width={150}
+                    height={150}
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
               </div>
             }
           >
@@ -200,7 +209,6 @@ export const ProfilesMain = () => {
         </div>
 
         <div style={{ flex: "1 1 0px" }}>
-          {" "}
           <VtmnCard
             title=""
             img={
@@ -216,14 +224,18 @@ export const ProfilesMain = () => {
                   padding: "16px 0",
                 }}
               >
-                <img
-                  src="/profile4.png"
-                  style={{
-                    width: "170px",
-                    height: "170px",
-                    objectFit: "cover",
-                  }}
-                />
+                <div style={{ width: 150, height: 150 }}>
+                  <Image
+                    src="/profile4.png"
+                    alt="profile4"
+                    fill={false}
+                    width={150}
+                    height={150}
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
               </div>
             }
           >
