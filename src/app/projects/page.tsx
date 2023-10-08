@@ -1,9 +1,20 @@
-import { VtmnButton } from "@vtmn/react";
+"use client";
+import { VtmnButton, VtmnSearch } from "@vtmn/react";
 
-export default async function Projects() {
+export default function Projects() {
   return (
     <main>
-      <VtmnButton>Refresh</VtmnButton>
+      <>
+        <VtmnButton>Refresh</VtmnButton>
+        <VtmnSearch
+          onClear={function noRefCheck() {}}
+          onSearch={function noRefCheck() {}}
+          placeholder="Search"
+          showSearchButton
+          size="medium"
+          variant="default"
+        />
+      </>
     </main>
   );
 }
