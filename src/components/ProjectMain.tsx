@@ -18,12 +18,14 @@ export const ProjectMain = () => {
       </div>
       <div style={{ display: "flex", gap: "35px" }}>
         <div style={{ flex: "1 1 0px" }}>
-          {" "}
           <VtmnCard
             title=""
             img={
-              <img
+              <Image
                 src="/projects1.png"
+                alt="projects1"
+                width={268}
+                height={218}
                 style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             }
@@ -49,12 +51,14 @@ export const ProjectMain = () => {
           </VtmnCard>
         </div>
         <div style={{ flex: "1 1 0px" }}>
-          {" "}
           <VtmnCard
             title=""
             img={
-              <img
+              <Image
                 src="/projects2.png"
+                alt="projects2"
+                width={268}
+                height={218}
                 style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             }
@@ -81,12 +85,14 @@ export const ProjectMain = () => {
         </div>
 
         <div style={{ flex: "1 1 0px" }}>
-          {" "}
           <VtmnCard
             title=""
             img={
-              <img
+              <Image
                 src="/projects3.png"
+                alt="projects3"
+                width={268}
+                height={218}
                 style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             }
@@ -113,12 +119,14 @@ export const ProjectMain = () => {
         </div>
 
         <div style={{ flex: "1 1 0px" }}>
-          {" "}
           <VtmnCard
             title=""
             img={
-              <img
+              <Image
                 src="/projects4.png"
+                alt="projects4"
+                width={268}
+                height={218}
                 style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             }
