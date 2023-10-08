@@ -14,13 +14,13 @@ const MiddleArea = () => {
         About
       </Link>
       <Link
-        href="/about"
+        href="/projects"
         style={{ padding: "0 30px", fontSize: "20px", fontWeight: 400 }}
       >
         Projects
       </Link>
       <Link
-        href="/about"
+        href="/people"
         style={{ padding: "0 30px", fontSize: "20px", fontWeight: 400 }}
       >
         People
